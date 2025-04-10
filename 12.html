@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bola's Cosmic Profile 🌌</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --space-purple: #2A0944;
+            --solid-purple: #3D125D;
+            --neon-pink: #FF00FF;
+            --star-blue: #00F7FF;
+        }
+
+        body {
+            background: var(--space-purple);
+            color: white;
+            font-family: 'Rubik', sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        .cosmic-elements div {
+            position: fixed;
+            opacity: 0.15;
+            animation: cosmicFloat 15s infinite linear;
+            filter: blur(1.5px);
+            z-index: 1;
+        }
+
+        .cosmic-elements .circle {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 3px solid var(--neon-pink);
+            background: rgba(255, 0, 255, 0.05);
+        }
+
+        .cosmic-elements .triangle {
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-bottom: 45px solid var(--star-blue);
+            opacity: 0.1;
+        }
+
+        .cosmic-elements .square {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 0, 0.05);
+            border: 3px solid var(--star-blue);
+            transform: rotate(45deg);
+        }
+
+        .galaxy-card {
+            background: var(--solid-purple);
+            border-radius: 20px;
+            padding: 40px;
+            width: 90%;
+            max-width: 600px;
+            margin: 20px;
+            border: 1px solid var(--neon-pink);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .stellar-avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 3px solid var(--star-blue);
+            margin: 0 auto 25px;
+            display: block;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            object-fit: cover;
+        }
+
+        .stellar-avatar:hover {
+            transform: rotate(15deg) scale(1.12);
+            box-shadow: 0 0 35px var(--star-blue);
+        }
+
+        .nebula-btn {
+            background: transparent;
+            border: 2px solid var(--star-blue);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 28px;
+            margin: 12px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1.05rem;
+        }
+
+        .nebula-btn:hover {
+            background: var(--star-blue);
+            letter-spacing: 1.8px;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 247, 255, 0.3);
+        }
+
+        .quantum-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--solid-purple);
+            border: 2px solid var(--neon-pink);
+            border-radius: 18px;
+            padding: 30px;
+            width: 85%;
+            max-width: 500px;
+            z-index: 1000;
+            animation: quantumEntrance 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+        }
+
+        .friends-constellation {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 18px;
+            margin: 25px 0;
+        }
+
+        .friend-name {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid var(--star-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8px;
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .friend-name:hover {
+            transform: scale(1.1) rotate(8deg);
+        }
+
+        @keyframes cosmicFloat {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(720deg); }
+        }
+
+        @keyframes quantumEntrance {
+            0% { 
+                opacity: 0; 
+                transform: translate(-50%, -45%) scale(0.9); 
+            }
+            100% { 
+                opacity: 1; 
+                transform: translate(-50%, -50%) scale(1); 
+            }
+        }
+
+        @keyframes quantumExit {
+            0% { 
+                opacity: 1; 
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% { 
+                opacity: 0; 
+                transform: translate(-50%, -45%) scale(0.9);
+            }
+        }
+
+        .quantum-popup.closing {
+            animation: quantumExit 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="cosmic-elements"></div>
+
+    <div class="galaxy-card">
+        <img src="https://i.ibb.co/S68LdjM/Default-Cute-Boy-Pray-under-Cross-anime-3d-art-0.png" alt="Bola" class="stellar-avatar">
+        
+        <h1 style="margin: 20px 0; line-height: 1.4;">
+            Bola Emad 🌟<br>
+            <span style="font-size: 1.2rem; color: var(--star-blue);">
+                🎂 33 Years | 📍 Texas, USA
+            </span>
+        </h1>
+
+        <div>
+            <button class="nebula-btn" onclick="showPopup('music')">🎵 Favorite Song</button>
+            <button class="nebula-btn" onclick="showPopup('friends')">👥 Friends</button>
+        </div>
+
+        <!-- Music Popup -->
+        <div id="musicPopup" class="quantum-popup">
+            <h2 style="color: var(--neon-pink); margin-bottom: 25px;">🎶 Current Obsession</h2>
+            <div style="position: relative; padding-top: 56.25%; margin: 15px 0;">
+                <iframe 
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                    src="https://www.youtube.com/embed/qhqJYGn5x5E" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <button class="nebula-btn" onclick="hidePopups()" style="width: 100%; margin-top: 15px;">
+                Close
+            </button>
+        </div>
+
+        <!-- Friends Popup -->
+        <div id="friendsPopup" class="quantum-popup">
+            <h2 style="color: var(--star-blue); margin-bottom: 25px;">🌟 The Best</h2>
+            <div class="friends-constellation">
+                <div class="friend-name">Leader<br></div>
+                <div class="friend-name">Dolly<br></div>
+                <div class="friend-name">Mark<br></div>
+            </div>
+            <button class="nebula-btn" onclick="hidePopups()" style="width: 100%; margin-top: 20px;">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function createCosmicElements() {
+            const container = document.querySelector('.cosmic-elements');
+            const shapes = ['circle', 'triangle', 'square'];
+            
+            for(let i = 0; i < 25; i++) {
+                const element = document.createElement('div');
+                element.className = shapes[Math.floor(Math.random() * shapes.length)];
+                element.style.left = Math.random() * 100 + '%';
+                element.style.animationDelay = Math.random() * 20 + 's';
+                element.style.animationDuration = (Math.random() * 8 + 12) + 's';
+                container.appendChild(element);
+            }
+        }
+        createCosmicElements();
+
+        function showPopup(type) {
+            document.querySelectorAll('.quantum-popup').forEach(popup => popup.style.display = 'none');
+            const popup = document.getElementById(`${type}Popup`);
+            popup.style.display = 'block';
+            popup.style.animation = 'quantumEntrance 0.4s ease-out';
+        }
+
+        function hidePopups() {
+            document.querySelectorAll('.quantum-popup').forEach(popup => {
+                popup.classList.add('closing');
+                setTimeout(() => {
+                    popup.style.display = 'none';
+                    popup.classList.remove('closing');
+                }, 300);
+            });
+        }
+
+        window.addEventListener('click', (e) => {
+            if(e.target.classList.contains('quantum-popup')) {
+                hidePopups();
+            }
+        });
+    </script>
+</body>
+</html>
